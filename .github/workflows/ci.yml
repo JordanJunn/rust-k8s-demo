@@ -4,11 +4,10 @@ on:
   push:
   schedule:
     - cron: "0 6 * * *"
-
 jobs:
   build:
     name: Build & check format
-    if: "!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')"
+    if: ${{ !contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -34,7 +33,7 @@ jobs:
 
   integration-test:
     name: Integration test
-    if: "!contains(github.event.head_commit.message, 'e2e skip') && !contains(github.event.head_commit.message, 'skip e2e')"
+    if: ${{ !contains(github.event.head_commit.message, 'e2e skip') && !contains(github.event.head_commit.message, 'skip e2e') }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
