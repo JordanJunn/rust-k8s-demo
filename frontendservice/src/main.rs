@@ -23,6 +23,7 @@ async fn get_quotation() -> Result<String, Box<dyn std::error::Error>> {
 }
 
 #[instrument]
+#[allow(clippy::let_with_type_underscore)]
 async fn handler() -> impl IntoResponse {
     match get_quotation().await {
         Ok(val) => {
