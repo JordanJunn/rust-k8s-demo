@@ -5,7 +5,7 @@ permissions:
 
 on:
   workflow_run:
-    workflows: ["Tag"]
+    workflows: ["Tag Release"]
     types:
       - "completed"
 
