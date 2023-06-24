@@ -3,3 +3,7 @@ members = [
     "frontendservice",
     "quotationservice",
 ]
+
+[package]
+name = "rust-k8s-demo" # the name of the package
+version = "0.1.0"
