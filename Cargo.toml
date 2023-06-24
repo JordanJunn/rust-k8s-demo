@@ -4,6 +4,6 @@ members = [
     "quotationservice",
 ]
 
-[package]
-name = "rust-k8s-demo" # the name of the package
-version = "0.1.0"
+[workspace.metadata.version]
+monorepo_version = "0.1.0"
+
