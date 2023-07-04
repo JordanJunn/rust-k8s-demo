@@ -25,15 +25,14 @@ jobs:
           components: rustfmt, clippy
           profile: minimal
           override: true
-      - run: cd frontendservice
-      - run: cargo build
-      - run: cargo clippy --all-targets --all-features -- -D warnings
+      - run: cd frontendservice && cargo build
+      - run: cd frontendservice && cargo clippy --all-targets --all-features -- -D warnings
       - name: Set nightly for cargo fmt
         uses: dtolnay/rust-toolchain@v1
         with:
           toolchain: nightly
           components: rustfmt
-      - run: cargo +nightly fmt -- --check
+      - run: cd frontendservice && cargo +nightly fmt -- --check
 
   integration-test:
     name: Integration test
