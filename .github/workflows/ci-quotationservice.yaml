@@ -1,4 +1,4 @@
-name: Build & test project
+name: Build & test quotationservice
 
 on:
   push:
