@@ -14,11 +14,10 @@ pub mod quotation {
 
 use quotation::{
     quotation_server::{Quotation, QuotationServer},
-    QuotationRequest,
-    QuotationResponse,
+    QuotationRequest, QuotationResponse,
 };
 
-#[derive(Default)]
+#[derive(Default, Debug)]
 pub struct MyQuotation {}
 
 #[tonic::async_trait]
