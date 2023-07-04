@@ -25,15 +25,14 @@ jobs:
           components: rustfmt, clippy
           profile: minimal
           override: true
-      - run: cd quotationservice
-      - run: cargo build
-      - run: cargo clippy --all-targets --all-features -- -D warnings
+      - run: cd quotationservice && cargo build
+      - run: cd quotationservice && cargo clippy --all-targets --all-features -- -D warnings
       - name: Set nightly for cargo fmt
         uses: dtolnay/rust-toolchain@v1
         with:
           toolchain: nightly
           components: rustfmt
-      - run: cargo +nightly fmt -- --check
+      - run: cd quotationservice && cargo +nightly fmt -- --check
 
   integration-test:
     name: Integration test
