@@ -25,6 +25,7 @@ jobs:
           components: rustfmt, clippy
           profile: minimal
           override: true
+      - run: cd quotationservice
       - run: cargo build
       - run: cargo clippy --all-targets --all-features -- -D warnings
       - name: Set nightly for cargo fmt
